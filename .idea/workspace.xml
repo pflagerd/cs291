@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4bfae72b-9931-41bc-b735-31f16597eb0c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.labbook/200920233100Z.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unit6/head-light-answer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unit6/head-light-answer.inlined.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unit6/head-light-answer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unit6/head-light.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unit6/set-a-directional-light-answer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unit6/set-a-directional-light-answer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unit6/set-a-directional-light.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.labbook/200921182040Z.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index_debug.html" beforeDir="false" afterPath="$PROJECT_DIR$/index_debug.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unit5/capsule.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unit6/05-set-a-directional-light.js" beforeDir="false" afterPath="$PROJECT_DIR$/unit6/set-a-directional-light.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unit6/08-head-light.js" beforeDir="false" afterPath="$PROJECT_DIR$/unit6/head-light.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +49,7 @@
       <recent name="$PROJECT_DIR$/unit1" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.set-a-directional-light.html">
+  <component name="RunManager" selected="Shell Script.newmd.bash">
     <configuration name="head-light-answer.inlined.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/cs291/unit6/head-light-answer.inlined.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -74,16 +62,24 @@
     <configuration name="set-a-directional-light.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/cs291/unit6/set-a-directional-light.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="head-light.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/unit6/head-light.js" working-dir="$PROJECT_DIR$/unit6">
+    <configuration name="newmd.bash" type="ShConfigurationType" temporary="true">
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/.labbook/newmd.bash" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$/.labbook" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/bash" />
+      <option name="INTERPRETER_OPTIONS" value="" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Shell Script.newmd.bash" />
         <item itemvalue="JavaScript Debug.set-a-directional-light.html" />
         <item itemvalue="JavaScript Debug.set-a-directional-light-answer.html" />
         <item itemvalue="JavaScript Debug.head-light-answer.inlined.html" />
         <item itemvalue="JavaScript Debug.head-light.html" />
-        <item itemvalue="Node.js.head-light.js" />
       </list>
     </recent_temporary>
   </component>
@@ -113,14 +109,7 @@
       <workItem from="1599671220278" duration="25886000" />
       <workItem from="1600538579752" duration="8701000" />
       <workItem from="1600649159471" duration="955000" />
-      <workItem from="1600659286302" duration="3079000" />
-    </task>
-    <task id="LOCAL-00006" summary="var -&gt; let">
-      <created>1595737622975</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1595737622975</updated>
+      <workItem from="1600659286302" duration="3513000" />
     </task>
     <task id="LOCAL-00007" summary="created with HtmlInliner">
       <created>1595737788289</created>
@@ -458,7 +447,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600570277394</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Revisiting the drinking bird.">
+      <created>1600712431481</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1600712431482</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -499,10 +495,10 @@
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="419" y="180" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1044@0.0.1920.1044" timestamp="1600712205345" />
-    <state x="554" y="68" width="811" height="908" key="CommitChangelistDialog2" timestamp="1600570277298">
+    <state x="554" y="68" width="811" height="908" key="CommitChangelistDialog2" timestamp="1600712431295">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="554" y="68" width="811" height="908" key="CommitChangelistDialog2/0.0.1920.1044@0.0.1920.1044" timestamp="1600570277298" />
+    <state x="554" y="68" width="811" height="908" key="CommitChangelistDialog2/0.0.1920.1044@0.0.1920.1044" timestamp="1600712431295" />
     <state x="100" y="100" width="1720" height="844" key="DiffContextDialog" timestamp="1600563361907">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
@@ -579,10 +575,10 @@
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="707" y="204" key="RollbackChangesDialog/0.0.1920.1044@0.0.1920.1044" timestamp="1596424700408" />
-    <state x="556" y="256" key="Vcs.Push.Dialog.v2" timestamp="1600570279391">
+    <state x="556" y="256" key="Vcs.Push.Dialog.v2" timestamp="1600712432970">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="556" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1044@0.0.1920.1044" timestamp="1600570279391" />
+    <state x="556" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1044@0.0.1920.1044" timestamp="1600712432970" />
     <state x="754" y="435" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1595387893540">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
