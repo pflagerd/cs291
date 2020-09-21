@@ -2,13 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4bfae72b-9931-41bc-b735-31f16597eb0c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/unit5/revisiting-the-drinking-bird-answer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unit5/revisiting-the-drinking-bird-answer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unit5/revisiting-the-drinking-bird.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unit5/revisiting-the-drinking-bird.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.labbook/200920233100Z.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unit6/head-light-answer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unit6/head-light-answer.inlined.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unit6/head-light-answer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unit6/head-light.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unit6/set-a-directional-light-answer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unit6/set-a-directional-light-answer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unit6/set-a-directional-light.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.labbook/200919001208Z.md" beforeDir="false" afterPath="$PROJECT_DIR$/.labbook/200919001208Z.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unit5/unit5-db_geom_exercise.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index_debug.html" beforeDir="false" afterPath="$PROJECT_DIR$/index_debug.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unit5/capsule.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unit6/05-set-a-directional-light.js" beforeDir="false" afterPath="$PROJECT_DIR$/unit6/set-a-directional-light.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unit6/08-head-light.js" beforeDir="false" afterPath="$PROJECT_DIR$/unit6/head-light.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +47,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../pflager.net" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/unit6" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -49,33 +56,34 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/unit6" />
       <recent name="$PROJECT_DIR$/unit2" />
       <recent name="$PROJECT_DIR$/unit1" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.revisiting-the-drinking-bird-answer.html">
-    <configuration name="capsule-answer.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/cs291/unit5/capsule-answer.html" useBuiltInWebServerPort="true">
+  <component name="RunManager" selected="JavaScript Debug.set-a-directional-light.html">
+    <configuration name="head-light-answer.inlined.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/cs291/unit6/head-light-answer.inlined.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="helices-answer.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/cs291/unit5/helices-answer.html" useBuiltInWebServerPort="true">
+    <configuration name="head-light.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/cs291/unit6/head-light.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="helices.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/cs291/unit5/helices.html" useBuiltInWebServerPort="true">
+    <configuration name="set-a-directional-light-answer.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/cs291/unit6/set-a-directional-light-answer.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="revisiting-the-drinking-bird-answer.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/cs291/unit5/revisiting-the-drinking-bird-answer.html" useBuiltInWebServerPort="true">
+    <configuration name="set-a-directional-light.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/cs291/unit6/set-a-directional-light.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="revisiting-the-drinking-bird.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/cs291/unit5/revisiting-the-drinking-bird.html" useBuiltInWebServerPort="true">
+    <configuration name="head-light.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/unit6/head-light.js" working-dir="$PROJECT_DIR$/unit6">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.revisiting-the-drinking-bird-answer.html" />
-        <item itemvalue="JavaScript Debug.revisiting-the-drinking-bird.html" />
-        <item itemvalue="JavaScript Debug.helices-answer.html" />
-        <item itemvalue="JavaScript Debug.helices.html" />
-        <item itemvalue="JavaScript Debug.capsule-answer.html" />
+        <item itemvalue="JavaScript Debug.set-a-directional-light.html" />
+        <item itemvalue="JavaScript Debug.set-a-directional-light-answer.html" />
+        <item itemvalue="JavaScript Debug.head-light-answer.inlined.html" />
+        <item itemvalue="JavaScript Debug.head-light.html" />
+        <item itemvalue="Node.js.head-light.js" />
       </list>
     </recent_temporary>
   </component>
@@ -103,14 +111,9 @@
       <workItem from="1599534007252" duration="1037000" />
       <workItem from="1599604181653" duration="2950000" />
       <workItem from="1599671220278" duration="25886000" />
-      <workItem from="1600538579752" duration="5146000" />
-    </task>
-    <task id="LOCAL-00005" summary="indent">
-      <created>1595388324883</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1595388324883</updated>
+      <workItem from="1600538579752" duration="8701000" />
+      <workItem from="1600649159471" duration="955000" />
+      <workItem from="1600659286302" duration="3079000" />
     </task>
     <task id="LOCAL-00006" summary="var -&gt; let">
       <created>1595737622975</created>
@@ -448,7 +451,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600564343088</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Revisiting the drinking bird.">
+      <created>1600570277394</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1600570277394</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -457,7 +467,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Head and Hat done." />
     <MESSAGE value="prepare vertex-attributes(-answer)" />
     <MESSAGE value="Make them all full-browser" />
     <MESSAGE value="set up for diffuse-material-answer" />
@@ -482,41 +491,42 @@
     <MESSAGE value="finished make-an-ornament-or-caltrop-answer.inlined.html" />
     <MESSAGE value="capsule" />
     <MESSAGE value="helices" />
-    <option name="LAST_COMMIT_MESSAGE" value="helices" />
+    <MESSAGE value="Revisiting the drinking bird." />
+    <option name="LAST_COMMIT_MESSAGE" value="Revisiting the drinking bird." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="419" y="180" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600137359314">
+    <state x="419" y="180" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600712205345">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="419" y="180" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1044@0.0.1920.1044" timestamp="1600137359314" />
-    <state x="554" y="68" width="811" height="908" key="CommitChangelistDialog2" timestamp="1600564342987">
+    <state x="419" y="180" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1044@0.0.1920.1044" timestamp="1600712205345" />
+    <state x="554" y="68" width="811" height="908" key="CommitChangelistDialog2" timestamp="1600570277298">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="554" y="68" width="811" height="908" key="CommitChangelistDialog2/0.0.1920.1044@0.0.1920.1044" timestamp="1600564342987" />
+    <state x="554" y="68" width="811" height="908" key="CommitChangelistDialog2/0.0.1920.1044@0.0.1920.1044" timestamp="1600570277298" />
     <state x="100" y="100" width="1720" height="844" key="DiffContextDialog" timestamp="1600563361907">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="100" y="100" width="1720" height="844" key="DiffContextDialog/0.0.1920.1044@0.0.1920.1044" timestamp="1600563361907" />
-    <state x="744" y="280" key="FileChooserDialogImpl" timestamp="1599959072527">
+    <state x="744" y="280" key="FileChooserDialogImpl" timestamp="1600571351639">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="744" y="280" key="FileChooserDialogImpl/0.0.1920.1044@0.0.1920.1044" timestamp="1599959072527" />
-    <state width="1874" height="275" key="GridCell.Tab.0.bottom" timestamp="1600538561083">
+    <state x="744" y="280" key="FileChooserDialogImpl/0.0.1920.1044@0.0.1920.1044" timestamp="1600571351639" />
+    <state width="1897" height="275" key="GridCell.Tab.0.bottom" timestamp="1600711779768">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state width="1874" height="275" key="GridCell.Tab.0.bottom/0.0.1920.1044@0.0.1920.1044" timestamp="1600538561083" />
-    <state width="1874" height="275" key="GridCell.Tab.0.center" timestamp="1600538561083">
+    <state width="1897" height="275" key="GridCell.Tab.0.bottom/0.0.1920.1044@0.0.1920.1044" timestamp="1600711779768" />
+    <state width="1897" height="275" key="GridCell.Tab.0.center" timestamp="1600711779768">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state width="1874" height="275" key="GridCell.Tab.0.center/0.0.1920.1044@0.0.1920.1044" timestamp="1600538561083" />
-    <state width="1874" height="275" key="GridCell.Tab.0.left" timestamp="1600538561083">
+    <state width="1897" height="275" key="GridCell.Tab.0.center/0.0.1920.1044@0.0.1920.1044" timestamp="1600711779768" />
+    <state width="1897" height="275" key="GridCell.Tab.0.left" timestamp="1600711779768">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state width="1874" height="275" key="GridCell.Tab.0.left/0.0.1920.1044@0.0.1920.1044" timestamp="1600538561083" />
-    <state width="1874" height="275" key="GridCell.Tab.0.right" timestamp="1600538561083">
+    <state width="1897" height="275" key="GridCell.Tab.0.left/0.0.1920.1044@0.0.1920.1044" timestamp="1600711779768" />
+    <state width="1897" height="275" key="GridCell.Tab.0.right" timestamp="1600711779768">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state width="1874" height="275" key="GridCell.Tab.0.right/0.0.1920.1044@0.0.1920.1044" timestamp="1600538561083" />
+    <state width="1897" height="275" key="GridCell.Tab.0.right/0.0.1920.1044@0.0.1920.1044" timestamp="1600711779768" />
     <state width="1897" height="311" key="GridCell.Tab.1.bottom" timestamp="1596080485732">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
@@ -569,10 +579,10 @@
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="707" y="204" key="RollbackChangesDialog/0.0.1920.1044@0.0.1920.1044" timestamp="1596424700408" />
-    <state x="556" y="256" key="Vcs.Push.Dialog.v2" timestamp="1600564364321">
+    <state x="556" y="256" key="Vcs.Push.Dialog.v2" timestamp="1600570279391">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="556" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1044@0.0.1920.1044" timestamp="1600564364321" />
+    <state x="556" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1044@0.0.1920.1044" timestamp="1600570279391" />
     <state x="754" y="435" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1595387893540">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>

@@ -5,10 +5,10 @@
 
 /*global THREE, Coordinates, document, window, $*/
 
-var camera, scene, renderer;
-var cameraControls;
+let camera, scene, renderer;
+let cameraControls;
 
-var clock = new THREE.Clock();
+let clock = new THREE.Clock();
 
 function fillScene() {
 	scene = new THREE.Scene();
@@ -21,46 +21,50 @@ function fillScene() {
 	// direction to it is -200, 200, -400
 	// full white color,
 	// intensity 1.5
+	let light = new THREE.DirectionalLight(0xFFFFFF, 1.5);
+	light.position.set(-200, 200, -400);
+
+	scene.add(light);
 
 	// MATERIALS
-	var headMaterial = new THREE.MeshLambertMaterial( );
+	let headMaterial = new THREE.MeshLambertMaterial( );
 	headMaterial.color.r = 104/255;
 	headMaterial.color.g = 1/255;
 	headMaterial.color.b = 5/255;
 	headMaterial.ambient.copy( headMaterial.color );
 
-	var hatMaterial = new THREE.MeshPhongMaterial( { shininess: 100 } );
+	let hatMaterial = new THREE.MeshPhongMaterial( { shininess: 100 } );
 	hatMaterial.color.r = 24/255;
 	hatMaterial.color.g = 38/255;
 	hatMaterial.color.b = 77/255;
 	hatMaterial.specular.setRGB( 0.5, 0.5, 0.5 );
 	hatMaterial.ambient.copy( hatMaterial.color );
 
-	var bodyMaterial = new THREE.MeshPhongMaterial( { shininess: 100 } );
+	let bodyMaterial = new THREE.MeshPhongMaterial( { shininess: 100 } );
 	bodyMaterial.color.setRGB( 31/255, 86/255, 169/255 );
 	bodyMaterial.specular.setRGB( 0.5, 0.5, 0.5 );
 	bodyMaterial.ambient.copy( bodyMaterial.color );
 
-	var glassMaterial = new THREE.MeshPhongMaterial( { color: 0x0, specular: 0xFFFFFF, shininess: 100, opacity: 0.3, transparent: true } );
+	let glassMaterial = new THREE.MeshPhongMaterial( { color: 0x0, specular: 0xFFFFFF, shininess: 100, opacity: 0.3, transparent: true } );
 	glassMaterial.ambient.copy( glassMaterial.color );
 
-	var legMaterial = new THREE.MeshPhongMaterial( { shininess: 4 } );
+	let legMaterial = new THREE.MeshPhongMaterial( { shininess: 4 } );
 	legMaterial.color.setHex( 0xAdA79b );
 	legMaterial.specular.setRGB( 0.5, 0.5, 0.5 );
 	legMaterial.ambient.copy( legMaterial.color );
 
-	var footMaterial = new THREE.MeshPhongMaterial( { color: 0x960f0b, shininess: 30 } );
+	let footMaterial = new THREE.MeshPhongMaterial( { color: 0x960f0b, shininess: 30 } );
 	footMaterial.specular.setRGB( 0.5, 0.5, 0.5 );
 	footMaterial.ambient.copy( footMaterial.color );
 
-	var crossbarMaterial = new THREE.MeshPhongMaterial( { color: 0x808080, specular: 0xFFFFFF, shininess: 400 } );
+	let crossbarMaterial = new THREE.MeshPhongMaterial( { color: 0x808080, specular: 0xFFFFFF, shininess: 400 } );
 	crossbarMaterial.ambient.copy( crossbarMaterial.color );
-	var eyeMaterial = new THREE.MeshPhongMaterial( { color: 0x000000, specular: 0x303030, shininess: 4 } );
+	let eyeMaterial = new THREE.MeshPhongMaterial( { color: 0x000000, specular: 0x303030, shininess: 4 } );
 	eyeMaterial.ambient.copy( eyeMaterial.color );
 
-	var sphere, cylinder, cube;
+	let sphere, cylinder, cube;
 
-	var bevelRadius = 1.9;	// TODO: 2.0 causes some geometry bug.
+	let bevelRadius = 1.9;	// TODO: 2.0 causes some geometry bug.
 
 	// MODELS
 	// base
@@ -191,12 +195,12 @@ function fillScene() {
 	scene.add( cylinder );
 
 	// eyes
-	var sphGeom = new THREE.SphereGeometry( 10, 32, 16 );
+	let sphGeom = new THREE.SphereGeometry( 10, 32, 16 );
 
 	// left eye
 	sphere = new THREE.Mesh( sphGeom, eyeMaterial );
 	sphere.position.set( -48, 560, 0 );
-	var eye = new THREE.Object3D();
+	let eye = new THREE.Object3D();
 	eye.add( sphere );
 	eye.rotation.y = 20 * Math.PI / 180.0;
 	scene.add( eye );
@@ -211,11 +215,11 @@ function fillScene() {
 }
 
 function init() {
-	var canvasWidth = 846;
-	var canvasHeight = 494;
+	let canvasWidth = 846;
+	let canvasHeight = 494;
 	// For grading the window is fixed in size; here's general code:
-	//var canvasWidth = window.innerWidth;
-	//var canvasHeight = window.innerHeight;
+	//let canvasWidth = window.innerWidth;
+	//let canvasHeight = window.innerHeight;
 
 	// RENDERER
 	renderer = new THREE.WebGLRenderer( { antialias: true } );
@@ -240,8 +244,8 @@ function drawHelpers() {
 }
 
 function addToDOM() {
-	var container = document.getElementById('container');
-	var canvas = container.getElementsByTagName('canvas');
+	let container = document.getElementById('container');
+	let canvas = container.getElementsByTagName('canvas');
 	if (canvas.length>0) {
 		container.removeChild(canvas[0]);
 	}
@@ -254,7 +258,7 @@ function animate() {
 }
 
 function render() {
-	var delta = clock.getDelta();
+	let delta = clock.getDelta();
 	cameraControls.update(delta);
 
 	renderer.render(scene, camera);
@@ -267,6 +271,6 @@ try {
 	addToDOM();
 	animate();
 } catch(e) {
-	var errorReport = "Your program encountered an unrecoverable error, can not draw on canvas. Error was:<br/><br/>";
+	let errorReport = "Your program encountered an unrecoverable error, can not draw on canvas. Error was:<br/><br/>";
 	$('#container').append(errorReport+e);
 }
