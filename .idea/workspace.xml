@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4bfae72b-9931-41bc-b735-31f16597eb0c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.labbook/200923221528Z.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unit6/spot-light-answer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unit6/spot-light-answer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unit6/spot-light.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unit6/spot-light.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unit6/10-spot-light.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unit6/set-a-directional-light-answer.js" beforeDir="false" afterPath="$PROJECT_DIR$/unit6/set-a-directional-light-answer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unit6/set-a-directional-light.js" beforeDir="false" afterPath="$PROJECT_DIR$/unit6/set-a-directional-light.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unit6/spot-light-answer.js" beforeDir="false" afterPath="$PROJECT_DIR$/unit6/spot-light-answer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +49,7 @@
       <recent name="$PROJECT_DIR$/unit1" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.spot-light-answer.html">
+  <component name="RunManager" selected="JavaScript Debug.spot-light-answer.inlined.html">
     <configuration name="set-a-directional-light-answer.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/cs291/unit6/set-a-directional-light-answer.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -66,27 +59,19 @@
     <configuration name="spot-light-answer.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/cs291/unit6/spot-light-answer.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="spot-light.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/cs291/unit6/spot-light.html" useBuiltInWebServerPort="true">
+    <configuration name="spot-light-answer.inlined.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/cs291/unit6/spot-light-answer.inlined.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="newmd.bash" type="ShConfigurationType" temporary="true">
-      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
-      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/.labbook/newmd.bash" />
-      <option name="SCRIPT_OPTIONS" value="" />
-      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
-      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$/.labbook" />
-      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
-      <option name="INTERPRETER_PATH" value="/bin/bash" />
-      <option name="INTERPRETER_OPTIONS" value="" />
+    <configuration name="spot-light.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/cs291/unit6/spot-light.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.spot-light-answer.inlined.html" />
         <item itemvalue="JavaScript Debug.spot-light-answer.html" />
         <item itemvalue="JavaScript Debug.spot-light.html" />
         <item itemvalue="JavaScript Debug.set-a-directional-light-answer.html" />
         <item itemvalue="JavaScript Debug.set-a-directional-light.html" />
-        <item itemvalue="Shell Script.newmd.bash" />
       </list>
     </recent_temporary>
   </component>
@@ -116,14 +101,7 @@
       <workItem from="1599671220278" duration="25886000" />
       <workItem from="1600538579752" duration="8701000" />
       <workItem from="1600649159471" duration="955000" />
-      <workItem from="1600659286302" duration="5065000" />
-    </task>
-    <task id="LOCAL-00008" summary="Completed the exercise, created resulting files with &quot;.answer&quot;">
-      <created>1595739619024</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1595739619024</updated>
+      <workItem from="1600659286302" duration="5643000" />
     </task>
     <task id="LOCAL-00009" summary="Add polygon-creation.html">
       <created>1595783662484</created>
@@ -461,7 +439,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600712812596</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="starting on spot-light&#10;fixing some missing init code in set-a-directional-light-answer.js">
+      <created>1600899924311</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1600899924311</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -470,7 +455,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Make them all full-browser" />
     <MESSAGE value="set up for diffuse-material-answer" />
     <MESSAGE value="smooth-lambert-answer" />
     <MESSAGE value="drinking-bird-shiny-answer" />
@@ -495,17 +479,18 @@
     <MESSAGE value="helices" />
     <MESSAGE value="Revisiting the drinking bird." />
     <MESSAGE value="head-light" />
-    <option name="LAST_COMMIT_MESSAGE" value="head-light" />
+    <MESSAGE value="starting on spot-light&#10;fixing some missing init code in set-a-directional-light-answer.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="starting on spot-light&#10;fixing some missing init code in set-a-directional-light-answer.js" />
   </component>
   <component name="WindowStateProjectService">
     <state x="419" y="180" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600712205345">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="419" y="180" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1044@0.0.1920.1044" timestamp="1600712205345" />
-    <state x="554" y="68" width="811" height="908" key="CommitChangelistDialog2" timestamp="1600712812513">
+    <state x="554" y="68" width="811" height="908" key="CommitChangelistDialog2" timestamp="1600899924231">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="554" y="68" width="811" height="908" key="CommitChangelistDialog2/0.0.1920.1044@0.0.1920.1044" timestamp="1600712812513" />
+    <state x="554" y="68" width="811" height="908" key="CommitChangelistDialog2/0.0.1920.1044@0.0.1920.1044" timestamp="1600899924231" />
     <state x="100" y="100" width="1720" height="844" key="DiffContextDialog" timestamp="1600563361907">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
@@ -582,10 +567,10 @@
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="707" y="204" key="RollbackChangesDialog/0.0.1920.1044@0.0.1920.1044" timestamp="1596424700408" />
-    <state x="556" y="256" key="Vcs.Push.Dialog.v2" timestamp="1600712813971">
+    <state x="556" y="256" key="Vcs.Push.Dialog.v2" timestamp="1600899925927">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="556" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1044@0.0.1920.1044" timestamp="1600712813971" />
+    <state x="556" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1044@0.0.1920.1044" timestamp="1600899925927" />
     <state x="754" y="435" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1595387893540">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>

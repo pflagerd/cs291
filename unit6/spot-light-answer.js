@@ -33,9 +33,12 @@ function fillScene() {
 	// exponent 1
 	// target position 0, 200, 0
 
-	let light = new THREE.DirectionalLight( 0xFFFFFF, 1.5 );
-	light.position.set( -200, 200, -400 );
-	scene.add( light );
+	let spotLight = new THREE.SpotLight( 0xFFFFFF, 1.5 );
+	spotLight.position.set( -400, 1200, 300 );
+	spotLight.angle = 20 / 360 * 2 * Math.PI;
+	spotLight.exponent = 1.0;
+	spotLight.target.position.set(0, 200, 0);
+	scene.add( spotLight );
 
 	let solidGround = new THREE.Mesh(
 		new THREE.PlaneGeometry( 10000, 10000 ),
