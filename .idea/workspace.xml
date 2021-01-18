@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4bfae72b-9931-41bc-b735-31f16597eb0c" name="Default Changelist" comment="progress">
+    <list default="true" id="4bfae72b-9931-41bc-b735-31f16597eb0c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/unit6/swivel-and-tilt-answer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unit6/swivel-and-tilt-answer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unit6/swivel-and-tilt.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unit6/ps-swivel-and-tilt.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unit6/ps-swivel-light-control.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unit6/swivel-and-tilt.js" beforeDir="false" afterPath="$PROJECT_DIR$/unit6/swivel-and-tilt.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,14 +119,7 @@
       <workItem from="1606421839285" duration="20000" />
       <workItem from="1606421880927" duration="64000" />
       <workItem from="1610940543914" duration="32000" />
-      <workItem from="1610940595615" duration="967000" />
-    </task>
-    <task id="LOCAL-00011" summary="Do vertex order and vertex order answer.">
-      <created>1595794536378</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1595794536378</updated>
+      <workItem from="1610940595615" duration="1568000" />
     </task>
     <task id="LOCAL-00012" summary="polygon-creation-answer works.">
       <created>1595795999065</created>
@@ -462,7 +457,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601602467886</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="swivel-and-tilt">
+      <created>1610941764000</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1610941764000</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -471,7 +473,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="set up for diffuse-material-answer" />
     <MESSAGE value="smooth-lambert-answer" />
     <MESSAGE value="drinking-bird-shiny-answer" />
     <MESSAGE value="set up for drinking-bird-transparency-answer" />
@@ -496,7 +497,8 @@
     <MESSAGE value="head-light" />
     <MESSAGE value="starting on spot-light&#10;fixing some missing init code in set-a-directional-light-answer.js" />
     <MESSAGE value="progress" />
-    <option name="LAST_COMMIT_MESSAGE" value="progress" />
+    <MESSAGE value="swivel-and-tilt" />
+    <option name="LAST_COMMIT_MESSAGE" value="swivel-and-tilt" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
