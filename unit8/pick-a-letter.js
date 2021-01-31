@@ -7,14 +7,14 @@
 ////////////////////////////////////////////////////////////////////////////////
 /*global THREE, Coordinates, $, document, window*/
 
-var path = "";	// STUDENT: set to "" to run on your computer, "/" for submitting code to Udacity
+let path = "";	// STUDENT: set to "" to run on your computer, "/" for submitting code to Udacity
 
-var camera, scene, renderer;
-var cameraControls, effectController;
-var clock = new THREE.Clock();
+let camera, scene, renderer;
+let cameraControls, effectController;
+let clock = new THREE.Clock();
 
 function SquareGeometry() {
-	var geo = new THREE.Geometry();
+	let geo = new THREE.Geometry();
 
 	// generate vertices
 	geo.vertices.push( new THREE.Vector3( 0.0, 0.0, 0.0 ) );
@@ -23,7 +23,7 @@ function SquareGeometry() {
 	geo.vertices.push( new THREE.Vector3( 0.0, 1.0, 0.0 ) );
 
 	// Change this array to select the correct part of the texture
-	var uvs = [];
+	let uvs = [];
 	uvs.push( new THREE.Vector2( 0.0, 0.0 ) );
 	uvs.push( new THREE.Vector2( 1.0, 0.0 ) );
 	uvs.push( new THREE.Vector2( 1.0, 1.0 ) );
@@ -41,20 +41,20 @@ function SquareGeometry() {
 function fillScene() {
 	scene = new THREE.Scene();
 
-	var myPolygon = new SquareGeometry();
-	var myTexture = THREE.ImageUtils.loadTexture( path + 'media/img/cs291/textures/lettergrid.png' );
-	var myPolygonMaterial = new THREE.MeshBasicMaterial( { map: myTexture } );
-	var polygonObject = new THREE.Mesh( myPolygon, myPolygonMaterial );
+	let myPolygon = new SquareGeometry();
+	let myTexture = THREE.ImageUtils.loadTexture( path + '../media/img/cs291/textures/lettergrid.png' );
+	let myPolygonMaterial = new THREE.MeshBasicMaterial( { map: myTexture } );
+	let polygonObject = new THREE.Mesh( myPolygon, myPolygonMaterial );
 	scene.add(polygonObject);
 }
 
 function init() {
-	var canvasWidth = 846;
-	var canvasHeight = 494;
+	let canvasWidth = 846;
+	let canvasHeight = 494;
 	// For grading the window is fixed in size; here's general code:
-	//var canvasWidth = window.innerWidth;
-	//var canvasHeight = window.innerHeight;
-	var canvasRatio = canvasWidth / canvasHeight;
+	//let canvasWidth = window.innerWidth;
+	//let canvasHeight = window.innerHeight;
+	let canvasRatio = canvasWidth / canvasHeight;
 
 	// RENDERER
 	renderer = new THREE.WebGLRenderer( { antialias: true } );
@@ -74,8 +74,8 @@ function init() {
 }
 
 function addToDOM() {
-	var container = document.getElementById('container');
-	var canvas = container.getElementsByTagName('canvas');
+	let container = document.getElementById('container');
+	let canvas = container.getElementsByTagName('canvas');
 	if (canvas.length>0) {
 		container.removeChild(canvas[0]);
 	}
@@ -95,7 +95,7 @@ function animate() {
 }
 
 function render() {
-	var delta = clock.getDelta();
+	let delta = clock.getDelta();
 	cameraControls.update(delta);
 
 	renderer.render(scene, camera);
@@ -125,6 +125,6 @@ try {
 	addToDOM();
 	animate();
 } catch(e) {
-	var errorReport = "Your program encountered an unrecoverable error, can not draw on canvas. Error was:<br/><br/>";
+	let errorReport = "Your program encountered an unrecoverable error, can not draw on canvas. Error was:<br/><br/>";
 	$('#container').append(errorReport+e);
 }

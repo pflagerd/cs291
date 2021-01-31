@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4bfae72b-9931-41bc-b735-31f16597eb0c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/unit6/swivel-and-tilt-light-control-answer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unit6/swivel-and-tilt-light-control-answer.inlined.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unit6/swivel-and-tilt-light-control-answer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unit6/swivel-and-tilt-light-control.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unit6/swivel-and-tilt-light-control.js" afterDir="false" />
+    <list default="true" id="4bfae72b-9931-41bc-b735-31f16597eb0c" name="Default Changelist" comment="look-at">
+      <change afterPath="$PROJECT_DIR$/unit8/particle-grid-answer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unit8/particle-grid-answer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unit8/particle-grid.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unit8/pick-a-letter-answer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unit8/pick-a-letter-answer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unit8/pick-a-letter.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unit8/pick-a-letter.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.labbook/210118032218Z.md" beforeDir="false" afterPath="$PROJECT_DIR$/.labbook/210118032218Z.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unit6/swivel-and-tilt-answer.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unit6/swivel-and-tilt-answer.inlined.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unit6/swivel-and-tilt-answer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unit6/swivel-and-tilt.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unit6/swivel-and-tilt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.labbook/210131185222Z.md" beforeDir="false" afterPath="$PROJECT_DIR$/.labbook/210131185222Z.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unit8/particle-grid.js" beforeDir="false" afterPath="$PROJECT_DIR$/unit8/particle-grid.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unit8/ps-pick-a-letter.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,39 +58,29 @@
       <recent name="$PROJECT_DIR$/unit1" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.shadows-answer.html">
-    <configuration name="shadows-answer.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/cs291/unit6/shadows-answer.html" useBuiltInWebServerPort="true">
+  <component name="RunManager" selected="JavaScript Debug.pick-a-letter-answer.html">
+    <configuration name="particle-grid-answer.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/cs291/unit8/particle-grid-answer.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="shadows.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/cs291/unit6/shadows.html" useBuiltInWebServerPort="true">
+    <configuration name="particle-grid.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/cs291/unit8/particle-grid.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="spot-light-answer.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/cs291/unit6/spot-light-answer.html" useBuiltInWebServerPort="true">
+    <configuration name="pick-a-letter-answer.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/cs291/unit8/pick-a-letter-answer.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="spot-light-answer.inlined.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/cs291/unit6/spot-light-answer.inlined.html" useBuiltInWebServerPort="true">
+    <configuration name="pick-a-letter.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/cs291/unit8/pick-a-letter.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="newmd.bash" type="ShConfigurationType" temporary="true">
-      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
-      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/.labbook/newmd.bash" />
-      <option name="SCRIPT_OPTIONS" value="" />
-      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
-      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$/.labbook" />
-      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
-      <option name="INTERPRETER_PATH" value="/bin/bash" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="EXECUTE_IN_TERMINAL" value="true" />
-      <envs />
+    <configuration name="textured-square.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/cs291/unit8/textured-square.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.shadows-answer.html" />
-        <item itemvalue="JavaScript Debug.shadows.html" />
-        <item itemvalue="Shell Script.newmd.bash" />
-        <item itemvalue="JavaScript Debug.spot-light-answer.inlined.html" />
-        <item itemvalue="JavaScript Debug.spot-light-answer.html" />
+        <item itemvalue="JavaScript Debug.pick-a-letter-answer.html" />
+        <item itemvalue="JavaScript Debug.pick-a-letter.html" />
+        <item itemvalue="JavaScript Debug.textured-square.html" />
+        <item itemvalue="JavaScript Debug.particle-grid.html" />
+        <item itemvalue="JavaScript Debug.particle-grid-answer.html" />
       </list>
     </recent_temporary>
   </component>
@@ -126,21 +115,10 @@
       <workItem from="1606421839285" duration="20000" />
       <workItem from="1606421880927" duration="64000" />
       <workItem from="1610940543914" duration="32000" />
-      <workItem from="1610940595615" duration="2416000" />
-    </task>
-    <task id="LOCAL-00013" summary="polygon location start">
-      <created>1595796380803</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1595796380803</updated>
-    </task>
-    <task id="LOCAL-00014" summary="polygon location works">
-      <created>1595796469967</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1595796469967</updated>
+      <workItem from="1610940595615" duration="9888000" />
+      <workItem from="1611942144580" duration="599000" />
+      <workItem from="1611947972435" duration="1845000" />
+      <workItem from="1612118360696" duration="3401000" />
     </task>
     <task id="LOCAL-00015" summary="polyon-radius works.">
       <created>1595804699032</created>
@@ -471,7 +449,21 @@
       <option name="project" value="LOCAL" />
       <updated>1610942346298</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="swivel-and-tilt-light-control is a better name.">
+      <created>1610943097809</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1610943097810</updated>
+    </task>
+    <task id="LOCAL-00063" summary="progress">
+      <created>1612119776166</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1612119776167</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -480,7 +472,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="drinking-bird-shiny-answer" />
     <MESSAGE value="set up for drinking-bird-transparency-answer" />
     <MESSAGE value="drinking-bird-transparency-answer" />
     <MESSAGE value="prepare for clock-exercise-answer" />
@@ -502,10 +493,11 @@
     <MESSAGE value="Revisiting the drinking bird." />
     <MESSAGE value="head-light" />
     <MESSAGE value="starting on spot-light&#10;fixing some missing init code in set-a-directional-light-answer.js" />
-    <MESSAGE value="progress" />
     <MESSAGE value="swivel-and-tilt" />
     <MESSAGE value="swivel-and-tilt finished." />
-    <option name="LAST_COMMIT_MESSAGE" value="swivel-and-tilt finished." />
+    <MESSAGE value="swivel-and-tilt-light-control is a better name." />
+    <MESSAGE value="progress" />
+    <option name="LAST_COMMIT_MESSAGE" value="progress" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
