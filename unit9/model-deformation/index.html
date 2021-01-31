@@ -9,7 +9,7 @@
 		<script type="text/javascript" src="../../lib/Coordinates.js"></script>
 		<script type="text/javascript" src="../../lib/OrbitAndPanControls.js"></script>
 		<script type="text/javascript" src="../../lib/uclass_BeveledBlockGeometry.js"></script>
-		<script type="text/javascript" src="../../lib/uclass_TeapotGeometry.js"></script>
+		<script type="text/javascript" src="../../lib/TeapotGeometry.js"></script>
 		<script type="text/javascript" src="../../lib/stats.min.js"></script>
 		<script type="text/javascript" src="../../lib/dat.gui.min.js"></script>
 		<script type="text/x-glsl" id="vertex">
@@ -20,7 +20,7 @@ uniform float uSphereRadius2;	// squared
 
 void main() {
 	// Student: modify position. You'll need to copy it to a
-	// temporary vector and modify the temporary. 
+	// temporary vector and modify the temporary.
 	// Don't forget to use this temporary in the rest of the shader.
 	gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
 	vNormal = normalize( normalMatrix * normal );
@@ -54,7 +54,7 @@ void main() {
 	vec3 lVector = normalize( lDirection.xyz );
 
 	vec3 normal = normalize( vNormal );
-	
+
 	// diffuse: N * L. Normal must be normalized, since it's interpolated.
 	float diffuse = max( dot( normal, lVector ), 0.0);
 

@@ -9,7 +9,7 @@
 		<script type="text/javascript" src="../../lib/Coordinates.js"></script>
 		<script type="text/javascript" src="../../lib/OrbitAndPanControls.js"></script>
 		<script type="text/javascript" src="../../lib/uclass_BeveledBlockGeometry.js"></script>
-		<script type="text/javascript" src="../../lib/uclass_TeapotGeometry.js"></script>
+		<script type="text/javascript" src="../../lib/TeapotGeometry.js"></script>
 		<script type="text/javascript" src="../../lib/stats.min.js"></script>
 		<script type="text/javascript" src="../../lib/dat.gui.min.js"></script>
 		<script type="text/x-glsl" id="vertex">
@@ -49,7 +49,7 @@ void main() {
 
 	// compute direction to light
 	vec4 lDirection = viewMatrix * vec4( uDirLightPos, 0.0 );
-	
+
 	// normalize the light direction to get the light vector
 	vec3 lVector = normalize( lDirection.xyz );
 
@@ -61,7 +61,7 @@ void main() {
 	}
 
 	vec3 normal = normalize( vNormal );
-	
+
 	// diffuse: N * L. Normal must be normalized, since it's interpolated.
 	float diffuse = max( dot( normal, lVector ), 0.0);
 
