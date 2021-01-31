@@ -33,3 +33,8 @@ http://davidscottlyons.com/threejs/presentations/frontporch14
 http://webgl.com/
 http://www.reddit.com/r/webgl
 http://stemkoski.github.io/Three.js/#shapes
+
+
+
+* make sure all 'var' have become 'let'
+

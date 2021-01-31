@@ -4,24 +4,24 @@
 ////////////////////////////////////////////////////////////////////////////////
 /*global THREE, Coordinates, $, document, window*/
 
-var path = "";	// STUDENT: set to "" to run on your computer, "/" for submitting code to Udacity
+let path = "";	// STUDENT: set to "" to run on your computer, "/" for submitting code to Udacity
 
-var camera, scene, renderer;
-var cameraControls;
-var clock = new THREE.Clock();
+let camera, scene, renderer;
+let cameraControls;
+let clock = new THREE.Clock();
 
 function fillScene() {
 	scene = new THREE.Scene();
 
-	var myPolygon = new SquareGeometry();
-	var myTexture = THREE.ImageUtils.loadTexture( path + 'media/img/cs291/textures/ash_uvgrid01.jpg' );
-	var myPolygonMaterial = new THREE.MeshBasicMaterial( { map: myTexture } );
-	var polygonObject = new THREE.Mesh( myPolygon, myPolygonMaterial );
+	let myPolygon = new SquareGeometry();
+	let myTexture = THREE.ImageUtils.loadTexture( path + 'media/img/cs291/textures/ash_uvgrid01.jpg' );
+	let myPolygonMaterial = new THREE.MeshBasicMaterial( { map: myTexture } );
+	let polygonObject = new THREE.Mesh( myPolygon, myPolygonMaterial );
 	scene.add(polygonObject);
 }
 
 function SquareGeometry() {
-	var geo = new THREE.Geometry();
+	let geo = new THREE.Geometry();
 
 	// student should add code within this method
 
@@ -29,7 +29,7 @@ function SquareGeometry() {
 	geo.vertices.push( new THREE.Vector3( 0.0, 0.0, 0.0 ) );
 	geo.vertices.push( new THREE.Vector3( 1.0, 0.0, 0.0 ) );
 	geo.vertices.push( new THREE.Vector3( 1.0, 1.0, 0.0 ) );
-	var uvs = [];
+	let uvs = [];
 	uvs.push( new THREE.Vector2( 0.0, 0.0 ) );
 	uvs.push( new THREE.Vector2( 1.0, 0.0 ) );
 	uvs.push( new THREE.Vector2( 1.0, 1.0 ) );
@@ -49,8 +49,8 @@ function drawHelpers() {
 }
 
 function addToDOM() {
-	var container = document.getElementById('container');
-	var canvas = container.getElementsByTagName('canvas');
+	let container = document.getElementById('container');
+	let canvas = container.getElementsByTagName('canvas');
 	if (canvas.length>0) {
 		container.removeChild(canvas[0]);
 	}
@@ -58,12 +58,14 @@ function addToDOM() {
 }
 
 function init() {
-	var canvasWidth = 846;
-	var canvasHeight = 494;
-	// For grading the window is fixed in size; here's general code:
-	//var canvasWidth = window.innerWidth;
-	//var canvasHeight = window.innerHeight;
-	var canvasRatio = canvasWidth / canvasHeight;
+	document.body.style.margin = "0";
+	document.body.style.padding = "0";
+	document.body.style.overflow = "hidden";
+
+	let canvasWidth = document.documentElement.clientWidth;
+	let canvasHeight = document.documentElement.clientHeight;
+
+	let canvasRatio = canvasWidth / canvasHeight;
 
 	// RENDERER
 	renderer = new THREE.WebGLRenderer( { antialias: true } );
@@ -87,7 +89,7 @@ function animate() {
 	render();
 }
 function render() {
-	var delta = clock.getDelta();
+	let delta = clock.getDelta();
 	cameraControls.update(delta);
 	renderer.render(scene, camera);
 }
@@ -99,6 +101,6 @@ try {
 	addToDOM();
 	animate();
 } catch(e) {
-	var errorReport = "Your program encountered an unrecoverable error, can not draw on canvas. Error was:<br/><br/>";
+	let errorReport = "Your program encountered an unrecoverable error, can not draw on canvas. Error was:<br/><br/>";
 	$('#container').append(errorReport+e);
 }

@@ -4,18 +4,19 @@
 ////////////////////////////////////////////////////////////////////////////////
 /*global THREE, Coordinates, document, window, $*/
 
-var camera, scene, renderer;
-var cameraControls;
-var clock = new THREE.Clock();
-var headlight;
-var bevelRadius = 1.9;	// TODO: 2.0 causes some geometry bug.
+let camera, scene, renderer;
+let cameraControls;
+let clock = new THREE.Clock();
+let headlight;
+let bevelRadius = 1.9;	// TODO: 2.0 causes some geometry bug.
 
 function init() {
-	var canvasWidth = 846;
-	var canvasHeight = 494;
-	// For grading the window is fixed in size; here's general code:
-	//var canvasWidth = window.innerWidth;
-	//var canvasHeight = window.innerHeight;
+	document.body.style.margin = "0";
+	document.body.style.padding = "0";
+	document.body.style.overflow = "hidden";
+
+	let canvasWidth = document.documentElement.clientWidth;
+	let canvasHeight = document.documentElement.clientHeight;
 
 	// RENDERER
 	renderer = new THREE.WebGLRenderer( { antialias: true } );
@@ -25,9 +26,9 @@ function init() {
 	renderer.setClearColorHex( 0xAAAAAA, 1.0 );
 
 	// CAMERA
-	var viewSize = 900;
+	let viewSize = 900;
 	// aspect ratio of width of window divided by height of window
-	var aspectRatio = canvasWidth/canvasHeight;
+	let aspectRatio = canvasWidth/canvasHeight;
 	// OrthographicCamera( left, right, top, bottom, near, far )
 	camera = new THREE.OrthographicCamera(
 		-aspectRatio*viewSize / 2, aspectRatio*viewSize / 2,
@@ -40,6 +41,7 @@ function init() {
 
 	// Student: set the target for the camera.
 	// The last known position of the drinking bird is x: -2800, y: 360, z: -1600
+
 }
 
 function fillScene() {
@@ -52,13 +54,13 @@ function fillScene() {
 
 	//////////////////////////////
 	// Glass
-	var glass = createGlass(260);
+	let glass = createGlass(260);
 	glass.position = new THREE.Vector3( -245-2800, 125, 0-1600);
 	scene.add(glass);
 
 	//////////////////////////////
 	// Bird
-	var bird = new THREE.Object3D();
+	let bird = new THREE.Object3D();
 	createDrinkingBird( bird );
 	bird.position.set(-2800, 0, -1600);
 
@@ -66,19 +68,19 @@ function fillScene() {
 }
 
 function createGlass(height) {
-	var cupMaterial = new THREE.MeshPhongMaterial( { color: 0x0, specular: 0xFFFFFF, shininess: 100, opacity: 0.3, transparent: true } );
-	var waterMaterial = new THREE.MeshLambertMaterial( {
+	let cupMaterial = new THREE.MeshPhongMaterial( { color: 0x0, specular: 0xFFFFFF, shininess: 100, opacity: 0.3, transparent: true } );
+	let waterMaterial = new THREE.MeshLambertMaterial( {
 		color: 0x1F8BAF
 		//opacity: 0.7,
 		//transparent: true
 	} );
 
-	var glassGeometry = new THREE.CylinderGeometry(120, 100, height, 32);
-	var glassMesh = new THREE.Mesh( glassGeometry, cupMaterial );
-	var glassObject = new THREE.Object3D();
+	let glassGeometry = new THREE.CylinderGeometry(120, 100, height, 32);
+	let glassMesh = new THREE.Mesh( glassGeometry, cupMaterial );
+	let glassObject = new THREE.Object3D();
 	glassObject.add(glassMesh);
 
-	var glassWater = new THREE.Mesh( new THREE.CylinderGeometry(120, 100, height, 32), waterMaterial);
+	let glassWater = new THREE.Mesh( new THREE.CylinderGeometry(120, 100, height, 32), waterMaterial);
 	glassWater.scale = new THREE.Vector3(0.9, 0.85, 0.9);
 	glassWater.position = new THREE.Vector3(0, -10, 0);
 	glassObject.add(glassWater);
@@ -88,17 +90,17 @@ function createGlass(height) {
 
 // Supporting frame for the bird - base + legs + feet
 function createSupport( bsupport ) {
-	var legMaterial = new THREE.MeshPhongMaterial( { shininess: 4 } );
+	let legMaterial = new THREE.MeshPhongMaterial( { shininess: 4 } );
 	legMaterial.color.setHex( 0xAdA79b );
 	legMaterial.specular.setRGB( 0.5, 0.5, 0.5 );
 	legMaterial.ambient.copy( legMaterial.color );
 
-	var footMaterial = new THREE.MeshPhongMaterial( { color: 0x960f0b, shininess: 30 } );
+	let footMaterial = new THREE.MeshPhongMaterial( { color: 0x960f0b, shininess: 30 } );
 	footMaterial.specular.setRGB( 0.5, 0.5, 0.5 );
 	footMaterial.ambient.copy( footMaterial.color );
 
 	// base
-	var cube = new THREE.Mesh(
+	let cube = new THREE.Mesh(
 		new THREE.BeveledBlockGeometry( 20+64+110, 4, 2*77+12, bevelRadius ), footMaterial );
 	cube.position.x = -45;	// (20+32) - half of width (20+64+110)/2
 	cube.position.y = 4/2;	// half of height
@@ -152,19 +154,19 @@ function createSupport( bsupport ) {
 
 // Body of the bird - body and the connector of body and head
 function createBody(bbody) {
-	var bodyMaterial = new THREE.MeshPhongMaterial( { shininess: 100 } );
+	let bodyMaterial = new THREE.MeshPhongMaterial( { shininess: 100 } );
 	bodyMaterial.color.setRGB( 31/255, 86/255, 169/255 );
 	bodyMaterial.specular.setRGB( 0.5, 0.5, 0.5 );
 	bodyMaterial.ambient.copy( bodyMaterial.color );
 
-	var glassMaterial = new THREE.MeshPhongMaterial( { color: 0x0, specular: 0xFFFFFF, shininess: 100, opacity: 0.3, transparent: true } );
+	let glassMaterial = new THREE.MeshPhongMaterial( { color: 0x0, specular: 0xFFFFFF, shininess: 100, opacity: 0.3, transparent: true } );
 	glassMaterial.ambient.copy( glassMaterial.color );
 
-	var crossbarMaterial = new THREE.MeshPhongMaterial( { color: 0x808080, specular: 0xFFFFFF, shininess: 400 } );
+	let crossbarMaterial = new THREE.MeshPhongMaterial( { color: 0x808080, specular: 0xFFFFFF, shininess: 400 } );
 	crossbarMaterial.ambient.copy( crossbarMaterial.color );
 
 	// body
-	var sphere = new THREE.Mesh(
+	let sphere = new THREE.Mesh(
 		new THREE.SphereGeometry( 104/2, 32, 16, 0, Math.PI * 2, Math.PI/2, Math.PI ), bodyMaterial );
 	sphere.position.x = 0;
 	sphere.position.y = 160;
@@ -172,7 +174,7 @@ function createBody(bbody) {
 	bbody.add( sphere );
 
 	// cap for top of hemisphere
-	var cylinder = new THREE.Mesh(
+	let cylinder = new THREE.Mesh(
 		new THREE.CylinderGeometry( 104/2, 104/2, 0, 32 ), bodyMaterial );
 	cylinder.position.x = 0;
 	cylinder.position.y = 160;
@@ -211,24 +213,24 @@ function createBody(bbody) {
 
 // Head of the bird - head + hat
 function createHead(bhead) {
-	var headMaterial = new THREE.MeshLambertMaterial( );
+	let headMaterial = new THREE.MeshLambertMaterial( );
 	headMaterial.color.r = 104/255;
 	headMaterial.color.g = 1/255;
 	headMaterial.color.b = 5/255;
 	headMaterial.ambient.copy( headMaterial.color );
 
-	var hatMaterial = new THREE.MeshPhongMaterial( { shininess: 100 } );
+	let hatMaterial = new THREE.MeshPhongMaterial( { shininess: 100 } );
 	hatMaterial.color.r = 24/255;
 	hatMaterial.color.g = 38/255;
 	hatMaterial.color.b = 77/255;
 	hatMaterial.specular.setRGB( 0.5, 0.5, 0.5 );
 	hatMaterial.ambient.copy( hatMaterial.color );
 
-	var eyeMaterial = new THREE.MeshPhongMaterial( { color: 0x000000, specular: 0x303030, shininess: 4 } );
+	let eyeMaterial = new THREE.MeshPhongMaterial( { color: 0x000000, specular: 0x303030, shininess: 4 } );
 	eyeMaterial.ambient.copy( eyeMaterial.color );
 
 	// head
-	var sphere = new THREE.Mesh(
+	let sphere = new THREE.Mesh(
 		new THREE.SphereGeometry( 104/2, 32, 16 ), headMaterial );
 	sphere.position.x = 0;
 	sphere.position.y = 160 + 390;
@@ -236,7 +238,7 @@ function createHead(bhead) {
 	bhead.add( sphere );
 
 	// hat
-	var cylinder = new THREE.Mesh(
+	let cylinder = new THREE.Mesh(
 		new THREE.CylinderGeometry( 142/2, 142/2, 10, 32 ), hatMaterial );
 	cylinder.position.x = 0;
 	cylinder.position.y = 160 + 390 + 40 + 10/2;
@@ -258,12 +260,12 @@ function createHead(bhead) {
 	bhead.add( cylinder );
 
 	// eyes
-	var sphGeom = new THREE.SphereGeometry( 10, 32, 16 );
+	let sphGeom = new THREE.SphereGeometry( 10, 32, 16 );
 
 	// left eye
 	sphere = new THREE.Mesh( sphGeom, eyeMaterial );
 	sphere.position.set( -48, 560, 0 );
-	var eye = new THREE.Object3D();
+	let eye = new THREE.Object3D();
 	eye.add( sphere );
 	eye.rotation.y = 20 * Math.PI / 180.0;
 	bhead.add( eye );
@@ -278,9 +280,9 @@ function createHead(bhead) {
 }
 
 function createDrinkingBird(bbird) {
-	var support = new THREE.Object3D();
-	var body = new THREE.Object3D();
-	var head = new THREE.Object3D();
+	let support = new THREE.Object3D();
+	let body = new THREE.Object3D();
+	let head = new THREE.Object3D();
 
 	// MODELS
 	// base + legs + feet
@@ -294,7 +296,7 @@ function createDrinkingBird(bbird) {
 
 	// make moving piece
 
-	var bodyhead = new THREE.Object3D();
+	let bodyhead = new THREE.Object3D();
 	bodyhead.add(body);
 	bodyhead.add(head);
 
@@ -311,8 +313,8 @@ function drawHelpers() {
 }
 
 function addToDOM() {
-	var container = document.getElementById('container');
-	var canvas = container.getElementsByTagName('canvas');
+	let container = document.getElementById('container');
+	let canvas = container.getElementsByTagName('canvas');
 	if (canvas.length>0) {
 		container.removeChild(canvas[0]);
 	}
@@ -325,7 +327,7 @@ function animate() {
 }
 
 function render() {
-	var delta = clock.getDelta();
+	let delta = clock.getDelta();
 	cameraControls.update(delta);
 
 	headlight.position.copy( camera.position );
@@ -340,6 +342,6 @@ try {
 	addToDOM();
 	animate();
 } catch(e) {
-	var errorReport = "Your program encountered an unrecoverable error, can not draw on canvas. Error was:<br/><br/>";
+	let errorReport = "Your program encountered an unrecoverable error, can not draw on canvas. Error was:<br/><br/>";
 	$('#container').append(errorReport+e);
 }

@@ -1,98 +1,114 @@
 "use strict"; // good practice - see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode
 ////////////////////////////////////////////////////////////////////////////////
-// Rearview camera
+// Field of view exercise
 ////////////////////////////////////////////////////////////////////////////////
-/*global THREE, Coordinates, $ */
+/*global THREE, Coordinates, document, window, $*/
 
-var camera, rearCam, scene, renderer;
-var cameraControls;
-
+var camera, scene, renderer;
+var cameraControls, effectController;
 var clock = new THREE.Clock();
+var cylinder, sphere, cube;
+var bevelRadius = 1.9;	// TODO: 2.0 causes some geometry bug.
+var aspectRatio;
+var eyeTargetScale;
 
-var canvasWidth;
-var canvasHeight;
-var rearTarget;
+// Your FOV slider should go in this function
+// the value of the slider should be accessible globally via: effectController.fov
+function setupGui() {
+	effectController = {};
+}
+
+function init() {
+	document.body.style.margin = "0";
+	document.body.style.padding = "0";
+	document.body.style.overflow = "hidden";
+
+	let canvasWidth = document.documentElement.clientWidth;
+	let canvasHeight = document.documentElement.clientHeight;
+
+	// RENDERER
+	renderer = new THREE.WebGLRenderer( { antialias: true } );
+	renderer.gammaInput = true;
+	renderer.gammaOutput = true;
+	renderer.setSize(canvasWidth, canvasHeight);
+	renderer.setClearColorHex( 0x808080, 1.0 );
+
+	// CAMERA
+	// aspect ratio of width of window divided by height of window
+	aspectRatio = canvasWidth/canvasHeight;
+	// OrthographicCamera( left, right, top, bottom, near, far )
+	camera = new THREE.PerspectiveCamera( 45, aspectRatio, 10, 10000 );
+	camera.position.set( -890, 600, -480 );
+
+	// CONTROLS
+	cameraControls = new THREE.OrbitAndPanControls(camera, renderer.domElement);
+	cameraControls.target.set(0,335,0);
+
+	var startdir = new THREE.Vector3();
+	startdir.subVectors( camera.position, cameraControls.target );
+	eyeTargetScale = Math.tan(camera.fov*(Math.PI/180)/2)*startdir.length();
+
+}
 
 function fillScene() {
 	scene = new THREE.Scene();
-	scene.fog = new THREE.Fog( 0xDDDDDD, 3000, 4000 );
 
 	// LIGHTS
-
 	scene.add( new THREE.AmbientLight( 0x222222 ) );
 
-	var light = new THREE.DirectionalLight( 0xFFFFFF, 0.7 );
-	light.position.set( 200, 500, 500 );
+	var light = new THREE.DirectionalLight( 0xFFFFFF, 1.0 );
+	light.position.set( 200, 400, 500 );
 
 	scene.add( light );
 
-	light = new THREE.DirectionalLight( 0xFFFFFF, 0.9 );
-	light.position.set( -200, -100, -400 );
+	light = new THREE.DirectionalLight( 0xFFFFFF, 1.0 );
+	light.position.set( -400, 200, -300 );
 
 	scene.add( light );
 
-	// some objects
+	//////////////////////////////
+	// Bird
+	var bird = new THREE.Object3D();
+	createDrinkingBird( bird );
+
+	scene.add( bird );
+
+	// some cubes
 	var x,z;
 
 	for ( x = -4500; x <= 4500; x += 1000 ) {
 		for ( z = -4500; z <= 4500; z += 1000 ) {
-			var coneMaterial = new THREE.MeshLambertMaterial();
-			// color wheel
-			var coneDistance = Math.sqrt( x*x + z*z );
-			// convert from angle to value in 2*PI range
-			var colorHue = Math.acos( x / coneDistance );
-			if ( z > 0 )
-			{
-				colorHue = Math.PI*2 - colorHue;
-			}
-			var colorSat = 1 - (coneDistance / 6364);
-			coneMaterial.color.setHSL((colorHue+1)/(Math.PI*2), colorSat, 0.6 );
-			coneMaterial.ambient.copy( coneMaterial.color );
-			var cone = new THREE.Mesh(
-				new THREE.CylinderGeometry( 100 - colorSat*100, colorSat*100, 300 ), coneMaterial );
-			cone.position.set( x, 150, z );
-			scene.add( cone );
+			var blockMaterial = new THREE.MeshLambertMaterial();
+			// sort-of random but repeatable colors
+			blockMaterial.color.setRGB( ((x+4500)%373)/373, ((x+z+9000)%283)/283, ((z+4500)%307)/307 );
+			blockMaterial.ambient.copy( blockMaterial.color );
+			var block = new THREE.Mesh(
+				new THREE.CubeGeometry( 100, 300, 100 ), blockMaterial );
+			block.position.set( x, 150, z );
+			scene.add( block );
 		}
 	}
+}
 
 
-	// MATERIALS
-	var headMaterial = new THREE.MeshLambertMaterial( );
-	headMaterial.color.r = 104/255;
-	headMaterial.color.g = 1/255;
-	headMaterial.color.b = 5/255;
-
-	var hatMaterial = new THREE.MeshPhongMaterial( { shininess: 100 } );
-	hatMaterial.color.r = 24/255;
-	hatMaterial.color.g = 38/255;
-	hatMaterial.color.b = 77/255;
-	hatMaterial.specular.setRGB( 0.5, 0.5, 0.5 );
-
-	var bodyMaterial = new THREE.MeshPhongMaterial( { shininess: 100 } );
-	bodyMaterial.color.setRGB( 31/255, 86/255, 169/255 );
-	bodyMaterial.specular.setRGB( 0.5, 0.5, 0.5 );
-
-	var glassMaterial = new THREE.MeshPhongMaterial( { color: 0x0, specular: 0xFFFFFF, shininess: 100, opacity: 0.3, transparent: true } );
-
+// Supporting frame for the bird - base + legs + feet
+function createSupport( bsupport ) {
 	var legMaterial = new THREE.MeshPhongMaterial( { shininess: 4 } );
 	legMaterial.color.setHex( 0xAdA79b );
 	legMaterial.specular.setRGB( 0.5, 0.5, 0.5 );
+	legMaterial.ambient.copy( legMaterial.color );
 
 	var footMaterial = new THREE.MeshPhongMaterial( { color: 0x960f0b, shininess: 30 } );
 	footMaterial.specular.setRGB( 0.5, 0.5, 0.5 );
+	footMaterial.ambient.copy( footMaterial.color );
 
-	var sphere, cylinder, cube;
-
-	var bevelRadius = 1.9;	// TODO: 2.0 causes some geometry bug.
-
-	// MODELS
 	// base
 	cube = new THREE.Mesh(
 		new THREE.BeveledBlockGeometry( 20+64+110, 4, 2*77+12, bevelRadius ), footMaterial );
 	cube.position.x = -45;	// (20+32) - half of width (20+64+110)/2
 	cube.position.y = 4/2;	// half of height
 	cube.position.z = 0;	// centered at origin
-	scene.add( cube );
+	bsupport.add( cube );
 
 	// feet
 	cube = new THREE.Mesh(
@@ -100,28 +116,28 @@ function fillScene() {
 	cube.position.x = -45;	// (20+32) - half of width (20+64+110)/2
 	cube.position.y = 52/2;	// half of height
 	cube.position.z = 77 + 6/2;	// offset 77 + half of depth 6/2
-	scene.add( cube );
+	bsupport.add( cube );
 
 	cube = new THREE.Mesh(
 		new THREE.BeveledBlockGeometry( 20+64+110, 52, 6, bevelRadius ), footMaterial );
 	cube.position.x = -45;	// (20+32) - half of width (20+64+110)/2
 	cube.position.y = 52/2;	// half of height
 	cube.position.z = -(77 + 6/2);	// negative offset 77 + half of depth 6/2
-	scene.add( cube );
+	bsupport.add( cube );
 
 	cube = new THREE.Mesh(
 		new THREE.BeveledBlockGeometry( 64, 104, 6, bevelRadius ), footMaterial );
 	cube.position.x = 0;	// centered on origin along X
 	cube.position.y = 104/2;
 	cube.position.z = 77 + 6/2;	// negative offset 77 + half of depth 6/2
-	scene.add( cube );
+	bsupport.add( cube );
 
 	cube = new THREE.Mesh(
 		new THREE.BeveledBlockGeometry( 64, 104, 6, bevelRadius ), footMaterial );
 	cube.position.x = 0;	// centered on origin along X
 	cube.position.y = 104/2;
 	cube.position.z = -(77 + 6/2);	// negative offset 77 + half of depth 6/2
-	scene.add( cube );
+	bsupport.add( cube );
 
 	// legs
 	cube = new THREE.Mesh(
@@ -129,14 +145,28 @@ function fillScene() {
 	cube.position.x = 0;	// centered on origin along X
 	cube.position.y = 104 + 282/2 - 2;
 	cube.position.z = 77 + 6/2;	// negative offset 77 + half of depth 6/2
-	scene.add( cube );
+	bsupport.add( cube );
 
 	cube = new THREE.Mesh(
 		new THREE.BeveledBlockGeometry( 60, 282+4, 4, bevelRadius ), legMaterial );
 	cube.position.x = 0;	// centered on origin along X
 	cube.position.y = 104 + 282/2 - 2;
 	cube.position.z = -(77 + 6/2);	// negative offset 77 + half of depth 6/2
-	scene.add( cube );
+	bsupport.add( cube );
+}
+
+// Body of the bird - body and the connector of body and head
+function createBody(bbody) {
+	var bodyMaterial = new THREE.MeshPhongMaterial( { shininess: 100 } );
+	bodyMaterial.color.setRGB( 31/255, 86/255, 169/255 );
+	bodyMaterial.specular.setRGB( 0.5, 0.5, 0.5 );
+	bodyMaterial.ambient.copy( bodyMaterial.color );
+
+	var glassMaterial = new THREE.MeshPhongMaterial( { color: 0x0, specular: 0xFFFFFF, shininess: 100, opacity: 0.3, transparent: true } );
+	glassMaterial.ambient.copy( glassMaterial.color );
+
+	var crossbarMaterial = new THREE.MeshPhongMaterial( { color: 0x808080, specular: 0xFFFFFF, shininess: 400 } );
+	crossbarMaterial.ambient.copy( crossbarMaterial.color );
 
 	// body
 	sphere = new THREE.Mesh(
@@ -144,7 +174,7 @@ function fillScene() {
 	sphere.position.x = 0;
 	sphere.position.y = 160;
 	sphere.position.z = 0;
-	scene.add( sphere );
+	bbody.add( sphere );
 
 	// cap for top of hemisphere
 	cylinder = new THREE.Mesh(
@@ -152,14 +182,14 @@ function fillScene() {
 	cylinder.position.x = 0;
 	cylinder.position.y = 160;
 	cylinder.position.z = 0;
-	scene.add( cylinder );
+	bbody.add( cylinder );
 
 	cylinder = new THREE.Mesh(
 		new THREE.CylinderGeometry( 12/2, 12/2, 390 - 100, 32 ), bodyMaterial );
 	cylinder.position.x = 0;
 	cylinder.position.y = 160 + 390/2 - 100;
 	cylinder.position.z = 0;
-	scene.add( cylinder );
+	bbody.add( cylinder );
 
 	// glass stem
 	sphere = new THREE.Mesh(
@@ -167,14 +197,40 @@ function fillScene() {
 	sphere.position.x = 0;
 	sphere.position.y = 160;
 	sphere.position.z = 0;
-	scene.add( sphere );
+	bbody.add( sphere );
 
 	cylinder = new THREE.Mesh(
 		new THREE.CylinderGeometry( 24/2, 24/2, 390, 32 ), glassMaterial );
 	cylinder.position.x = 0;
 	cylinder.position.y = 160 + 390/2;
 	cylinder.position.z = 0;
-	scene.add( cylinder );
+	bbody.add( cylinder );
+
+	// crossbar
+	cylinder = new THREE.Mesh(
+		new THREE.CylinderGeometry( 5, 5, 200, 32 ), crossbarMaterial );
+	cylinder.position.set( 0, 360, 0 );
+	cylinder.rotation.x = 90 * Math.PI / 180.0;
+	bbody.add( cylinder );
+}
+
+// Head of the bird - head + hat
+function createHead(bhead) {
+	var headMaterial = new THREE.MeshLambertMaterial( );
+	headMaterial.color.r = 104/255;
+	headMaterial.color.g = 1/255;
+	headMaterial.color.b = 5/255;
+	headMaterial.ambient.copy( headMaterial.color );
+
+	var hatMaterial = new THREE.MeshPhongMaterial( { shininess: 100 } );
+	hatMaterial.color.r = 24/255;
+	hatMaterial.color.g = 38/255;
+	hatMaterial.color.b = 77/255;
+	hatMaterial.specular.setRGB( 0.5, 0.5, 0.5 );
+	hatMaterial.ambient.copy( hatMaterial.color );
+
+	var eyeMaterial = new THREE.MeshPhongMaterial( { color: 0x000000, specular: 0x303030, shininess: 4 } );
+	eyeMaterial.ambient.copy( eyeMaterial.color );
 
 	// head
 	sphere = new THREE.Mesh(
@@ -182,7 +238,7 @@ function fillScene() {
 	sphere.position.x = 0;
 	sphere.position.y = 160 + 390;
 	sphere.position.z = 0;
-	scene.add( sphere );
+	bhead.add( sphere );
 
 	// hat
 	cylinder = new THREE.Mesh(
@@ -190,31 +246,21 @@ function fillScene() {
 	cylinder.position.x = 0;
 	cylinder.position.y = 160 + 390 + 40 + 10/2;
 	cylinder.position.z = 0;
-	scene.add( cylinder );
+	bhead.add( cylinder );
 
 	cylinder = new THREE.Mesh(
 		new THREE.CylinderGeometry( 80/2, 80/2, 70, 32 ), hatMaterial );
 	cylinder.position.x = 0;
 	cylinder.position.y = 160 + 390 + 40 + 10 + 70/2;
 	cylinder.position.z = 0;
-	scene.add( cylinder );
-
-	var crossbarMaterial = new THREE.MeshPhongMaterial( { color: 0x808080, specular: 0xFFFFFF, shininess: 400 } );
-	var eyeMaterial = new THREE.MeshPhongMaterial( { color: 0x000000, specular: 0x303030, shininess: 4 } );
-
-	// crossbar
-	cylinder = new THREE.Mesh(
-		new THREE.CylinderGeometry( 5, 5, 200, 32 ), crossbarMaterial );
-	cylinder.position.set( 0, 360, 0 );
-	cylinder.rotation.x = 90 * Math.PI / 180.0;
-	scene.add( cylinder );
+	bhead.add( cylinder );
 
 	// nose
 	cylinder = new THREE.Mesh(
 		new THREE.CylinderGeometry( 6, 14, 70, 32 ), headMaterial );
 	cylinder.position.set( -70, 530, 0 );
 	cylinder.rotation.z = 90 * Math.PI / 180.0;
-	scene.add( cylinder );
+	bhead.add( cylinder );
 
 	// eyes
 	var sphGeom = new THREE.SphereGeometry( 10, 32, 16 );
@@ -225,7 +271,7 @@ function fillScene() {
 	var eye = new THREE.Object3D();
 	eye.add( sphere );
 	eye.rotation.y = 20 * Math.PI / 180.0;
-	scene.add( eye );
+	bhead.add( eye );
 
 	// right eye
 	sphere = new THREE.Mesh( sphGeom, eyeMaterial );
@@ -233,43 +279,31 @@ function fillScene() {
 	eye = new THREE.Object3D();
 	eye.add( sphere );
 	eye.rotation.y = -20 * Math.PI / 180.0;
-	scene.add( eye );
+	bhead.add( eye );
 }
 
-function init() {
-	canvasWidth = 846;
-	canvasHeight = 494;
-	// For grading the window is fixed in size; here's general code:
-	//var canvasWidth = window.innerWidth;
-	//var canvasHeight = window.innerHeight;
+function createDrinkingBird(bbird) {
+	var support = new THREE.Object3D();
+	var body = new THREE.Object3D();
+	var head = new THREE.Object3D();
 
-	// allocate just once, instead of per render
-	rearTarget = new THREE.Vector3();
+	// MODELS
+	// base + legs + feet
+	createSupport(support);
 
-	// RENDERER
-	renderer = new THREE.WebGLRenderer( { antialias: true } );
-	renderer.gammaInput = true;
-	renderer.gammaOutput = true;
-	renderer.setSize(canvasWidth, canvasHeight);
-	renderer.setClearColorHex( 0xDDDDDD, 1.0 );
-	// don't clear when second viewport is drawn
-	renderer.autoClear = false;
+	// body + body/head connector
+	createBody(body);
 
-	// CAMERA
-	camera = new THREE.PerspectiveCamera( 45, canvasWidth / canvasHeight, 1, 7000 );
-	camera.position.set( -810, 310, -1230 );
-	rearCam = new THREE.PerspectiveCamera( 45, canvasWidth / canvasHeight, 1, 7000 );
-	rearCam.position.set( -810, 310, -1230 );
-	rearCam.lookAt( new THREE.Vector3( 0, 0, 0 ) );
+	// head + hat
+	createHead(head);
 
-	// CONTROLS
-	cameraControls = new THREE.OrbitAndPanControls(camera, renderer.domElement);
-	cameraControls.target.set(0,130,0);
+	bbird.add(support);
+	bbird.add(body);
+	bbird.add(head);
 
 }
 
 function drawHelpers() {
-	Coordinates.drawGround({size:10000});
 	Coordinates.drawGrid({size:10000,scale:0.01});
 }
 
@@ -290,29 +324,13 @@ function animate() {
 function render() {
 	var delta = clock.getDelta();
 	cameraControls.update(delta);
-
-	renderer.enableScissorTest( false );
-	renderer.setViewport( 0, 0, canvasWidth, canvasHeight );
-	renderer.clear();
-	renderer.render( scene, camera );
-
-	// Student: set rearCam so it's pointing in the opposite direction than the camera
-
-	// rearview render
-	renderer.enableScissorTest( true );
-	// setScissor could be set just once in this particular case,
-	// since it never changes, and then just enabled/disabled
-	renderer.setScissor( 0.75 * canvasWidth, 0.75 * canvasHeight,
-		0.25 * canvasWidth, 0.25 * canvasHeight );
-	renderer.setViewport( 0.75 * canvasWidth, 0.75 * canvasHeight,
-		0.25 * canvasWidth, 0.25 * canvasHeight );
-	renderer.clear();
-	renderer.render( scene, rearCam );
+	renderer.render(scene, camera);
 }
 
 try {
 	init();
 	fillScene();
+	setupGui();
 	drawHelpers();
 	addToDOM();
 	animate();
