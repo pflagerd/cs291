@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4bfae72b-9931-41bc-b735-31f16597eb0c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/unit8/reflection-mapping-answer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unit8/reflection-mapping-answer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unit8/reflection-mapping.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unit8/reflection-mapping.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.labbook/210131185222Z.md" beforeDir="false" afterPath="$PROJECT_DIR$/.labbook/210131185222Z.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unit8/specular-mapping-answer.js" beforeDir="false" afterPath="$PROJECT_DIR$/unit8/specular-mapping-answer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unit8/ps-reflection-mapping.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,14 +53,14 @@
       <recent name="$PROJECT_DIR$/unit1" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.specular-mapping-answer.html">
-    <configuration name="drinking-bird-tail-answer.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/cs291/unit8/drinking-bird-tail-answer.html" useBuiltInWebServerPort="true">
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="JavaScript Debug.reflection-mapping-answer.html">
     <configuration name="drinking-bird-tail.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/cs291/unit8/drinking-bird-tail.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="grassy-plain-answer.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/cs291/unit8/grassy-plain-answer.html" useBuiltInWebServerPort="true">
+    <configuration name="reflection-mapping-answer.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/cs291/unit8/reflection-mapping-answer.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="reflection-mapping.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/cs291/unit8/reflection-mapping.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="specular-mapping-answer.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/cs291/unit8/specular-mapping-answer.html" useBuiltInWebServerPort="true">
@@ -68,11 +71,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.specular-mapping-answer.html" />
+        <item itemvalue="JavaScript Debug.reflection-mapping-answer.html" />
+        <item itemvalue="JavaScript Debug.reflection-mapping.html" />
         <item itemvalue="JavaScript Debug.specular-mapping.html" />
+        <item itemvalue="JavaScript Debug.specular-mapping-answer.html" />
         <item itemvalue="JavaScript Debug.drinking-bird-tail.html" />
-        <item itemvalue="JavaScript Debug.drinking-bird-tail-answer.html" />
-        <item itemvalue="JavaScript Debug.grassy-plain-answer.html" />
       </list>
     </recent_temporary>
   </component>
@@ -110,14 +113,7 @@
       <workItem from="1610940595615" duration="9888000" />
       <workItem from="1611942144580" duration="599000" />
       <workItem from="1611947972435" duration="1845000" />
-      <workItem from="1612118360696" duration="5371000" />
-    </task>
-    <task id="LOCAL-00019" summary="var -&gt; let in drinking-bird.js">
-      <created>1595904357695</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1595904357695</updated>
+      <workItem from="1612118360696" duration="5898000" />
     </task>
     <task id="LOCAL-00020" summary="progress on drinking-bird-answer">
       <created>1595907337670</created>
@@ -455,7 +451,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612123596020</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="Missed one.">
+      <created>1612123745998</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1612123745998</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -464,7 +467,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="prepare for clock-exercise-answer" />
     <MESSAGE value="var -&gt; let&#10;prepare for rotate-a-block" />
     <MESSAGE value="finish rotate-a-block-answer" />
     <MESSAGE value="Revisiting all exercises" />
@@ -489,7 +491,8 @@
     <MESSAGE value="progress" />
     <MESSAGE value="drinking bird." />
     <MESSAGE value="specular mapping" />
-    <option name="LAST_COMMIT_MESSAGE" value="specular mapping" />
+    <MESSAGE value="Missed one." />
+    <option name="LAST_COMMIT_MESSAGE" value="Missed one." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

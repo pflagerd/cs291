@@ -28,7 +28,7 @@ function fillScene() {
 	scene.add( light );
 
 	// MATERIALS
-	let path = txrpath + "media/img/cs291/textures/skybox/";
+	let path = txrpath + "../media/img/cs291/textures/skybox/";
 	let urls = [path + "px.jpg", path + "nx.jpg",
 				path + "py.jpg", path + "ny.jpg",
 				path + "pz.jpg", path + "nz.jpg" ];
