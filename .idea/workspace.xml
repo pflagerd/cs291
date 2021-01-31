@@ -2,25 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4bfae72b-9931-41bc-b735-31f16597eb0c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/unit8/specular-mapping-answer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unit8/specular-mapping-answer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unit8/specular-mapping.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unit8/specular-mapping.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index_debug.html" beforeDir="false" afterPath="$PROJECT_DIR$/index_debug.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/uclass_TeapotGeometry.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/TeapotGeometry.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/transforms.html" beforeDir="false" afterPath="$PROJECT_DIR$/transforms.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unit8/ps-specular-mapping.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unit9/anisotropic-material/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/unit9/anisotropic-material/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unit9/debugging-shaders/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/unit9/debugging-shaders/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unit9/model-deformation/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/unit9/model-deformation/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unit9/moving-flashlight/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/unit9/moving-flashlight/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unit9/procedural-texturing/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/unit9/procedural-texturing/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unit9/sharp-specular/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/unit9/sharp-specular/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unit9/two-tone-shading/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/unit9/two-tone-shading/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unit9/vertex-normal-creation/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/unit9/vertex-normal-creation/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unit9/wrap-lighting/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/unit9/wrap-lighting/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.labbook/210131185222Z.md" beforeDir="false" afterPath="$PROJECT_DIR$/.labbook/210131185222Z.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unit8/specular-mapping-answer.js" beforeDir="false" afterPath="$PROJECT_DIR$/unit8/specular-mapping-answer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,14 +110,7 @@
       <workItem from="1610940595615" duration="9888000" />
       <workItem from="1611942144580" duration="599000" />
       <workItem from="1611947972435" duration="1845000" />
-      <workItem from="1612118360696" duration="5207000" />
-    </task>
-    <task id="LOCAL-00018" summary="drinking-bird">
-      <created>1595808265697</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1595808265697</updated>
+      <workItem from="1612118360696" duration="5371000" />
     </task>
     <task id="LOCAL-00019" summary="var -&gt; let in drinking-bird.js">
       <created>1595904357695</created>
@@ -471,7 +448,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612122845553</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="specular mapping">
+      <created>1612123596020</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1612123596020</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -480,7 +464,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="drinking-bird-transparency-answer" />
     <MESSAGE value="prepare for clock-exercise-answer" />
     <MESSAGE value="var -&gt; let&#10;prepare for rotate-a-block" />
     <MESSAGE value="finish rotate-a-block-answer" />
@@ -505,7 +488,8 @@
     <MESSAGE value="swivel-and-tilt-light-control is a better name." />
     <MESSAGE value="progress" />
     <MESSAGE value="drinking bird." />
-    <option name="LAST_COMMIT_MESSAGE" value="drinking bird." />
+    <MESSAGE value="specular mapping" />
+    <option name="LAST_COMMIT_MESSAGE" value="specular mapping" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

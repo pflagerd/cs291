@@ -14,14 +14,13 @@ function createMaterial() {
 	let texture = THREE.ImageUtils.loadTexture( '../media/img/cs291/textures/water.jpg' );
 	let material = new THREE.MeshPhongMaterial( { shininess: 50 } );
 	material.specularMap = texture;
+	material.color.setHSL( 0.09, 0.46, 0.2 );
 
 	// let texture = THREE.ImageUtils.loadTexture( '../media/img/cs291/textures/water.jpg' );
 	// let material = new THREE.MeshPhongMaterial( { shininess: 50 } );
 	// material.map = texture;
 	// material.color.setHSL( 0.09, 0.46, 0.8 );
 
-
-	material.color.setHSL( 0.09, 0.46, 0.2 );
 	material.ambient.copy( material.color );
 	material.specular.setHSL( 0.09, 0.46, 1.0 );
 
