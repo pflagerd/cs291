@@ -4,11 +4,11 @@
 ////////////////////////////////////////////////////////////////////////////////
 /*global THREE, $ */
 
-var camera, scene, renderer;
-var cameraControls;
-var bevelRadius = 1.9;
-var clock = new THREE.Clock();
-var cylinder,sphere,cube;
+let camera, scene, renderer;
+let cameraControls;
+let bevelRadius = 1.9;
+let clock = new THREE.Clock();
+let cylinder,sphere,cube;
 
 function fillScene() {
 	scene = new THREE.Scene();
@@ -16,7 +16,7 @@ function fillScene() {
 
 	// LIGHTS
 	scene.add( new THREE.AmbientLight( 0x222222 ) );
-	var light = new THREE.DirectionalLight( 0xFFFFFF, 0.7 );
+	let light = new THREE.DirectionalLight( 0xFFFFFF, 0.7 );
 	light.position.set( 200, 500, 500 );
 	scene.add( light );
 	light = new THREE.DirectionalLight( 0xFFFFFF, 0.9 );
@@ -25,9 +25,10 @@ function fillScene() {
 
 	// GROUND
 	// Student: texture is located at URL /media/img/cs291/textures/grass512x512.jpg
-	var solidGround = new THREE.Mesh(
-		new THREE.PlaneGeometry( 10000, 10000, 100, 100 ),
-		new THREE.MeshLambertMaterial( { color: 0xFFFFFF } ) );
+	let texture = THREE.ImageUtils.loadTexture( '../media/img/cs291/textures/grass512x512.jpg' );
+	texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+	texture.repeat.set( 10, 10 );
+	let solidGround = new THREE.Mesh( new THREE.PlaneGeometry( 10000, 10000, 100, 100 ), new THREE.MeshLambertMaterial( { map: texture } ) );
 	solidGround.rotation.x = - Math.PI / 2;
 
 	scene.add( solidGround );
@@ -35,7 +36,7 @@ function fillScene() {
 	// uncomment to see grid on ground
 	/*
 	// put grid lines every 10000/100 = 100 units
-	var ground = new THREE.Mesh(
+	let ground = new THREE.Mesh(
 		new THREE.PlaneGeometry( 10000, 10000, 100, 100 ),
 		new THREE.MeshBasicMaterial( { color: 0x0, wireframe: true } ) );
 	ground.rotation.x = - Math.PI / 2;
@@ -45,19 +46,19 @@ function fillScene() {
 	*/
 
 	// Bird
-	var bird = new THREE.Object3D();
+	let bird = new THREE.Object3D();
 	createDrinkingBird( bird );
 	scene.add( bird );
 
 }
 
 function createSupport( bsupport ) {
-	var legMaterial = new THREE.MeshPhongMaterial( { shininess: 4 } );
+	let legMaterial = new THREE.MeshPhongMaterial( { shininess: 4 } );
 	legMaterial.color.setHex( 0xAdA79b );
 	legMaterial.specular.setRGB( 0.5, 0.5, 0.5 );
 	legMaterial.ambient.copy( legMaterial.color );
 
-	var footMaterial = new THREE.MeshPhongMaterial( { color: 0x960f0b, shininess: 30 } );
+	let footMaterial = new THREE.MeshPhongMaterial( { color: 0x960f0b, shininess: 30 } );
 	footMaterial.specular.setRGB( 0.5, 0.5, 0.5 );
 	footMaterial.ambient.copy( footMaterial.color );
 
@@ -116,15 +117,15 @@ function createSupport( bsupport ) {
 
 // Body of the bird - body and the connector of body and head
 function createBody(bbody) {
-	var bodyMaterial = new THREE.MeshPhongMaterial( { shininess: 100 } );
+	let bodyMaterial = new THREE.MeshPhongMaterial( { shininess: 100 } );
 	bodyMaterial.color.setRGB( 31/255, 86/255, 169/255 );
 	bodyMaterial.specular.setRGB( 0.5, 0.5, 0.5 );
 	bodyMaterial.ambient.copy( bodyMaterial.color );
 
-	var glassMaterial = new THREE.MeshPhongMaterial( { color: 0x0, specular: 0xFFFFFF, shininess: 100, opacity: 0.3, transparent: true } );
+	let glassMaterial = new THREE.MeshPhongMaterial( { color: 0x0, specular: 0xFFFFFF, shininess: 100, opacity: 0.3, transparent: true } );
 	glassMaterial.ambient.copy( glassMaterial.color );
 
-	var crossbarMaterial = new THREE.MeshPhongMaterial( { color: 0x808080, specular: 0xFFFFFF, shininess: 400 } );
+	let crossbarMaterial = new THREE.MeshPhongMaterial( { color: 0x808080, specular: 0xFFFFFF, shininess: 400 } );
 	crossbarMaterial.ambient.copy( crossbarMaterial.color );
 
 	// body
@@ -175,20 +176,20 @@ function createBody(bbody) {
 
 // Head of the bird - head + hat
 function createHead(bhead) {
-	var headMaterial = new THREE.MeshLambertMaterial( );
+	let headMaterial = new THREE.MeshLambertMaterial( );
 	headMaterial.color.r = 104/255;
 	headMaterial.color.g = 1/255;
 	headMaterial.color.b = 5/255;
 	headMaterial.ambient.copy( headMaterial.color );
 
-	var hatMaterial = new THREE.MeshPhongMaterial( { shininess: 100 } );
+	let hatMaterial = new THREE.MeshPhongMaterial( { shininess: 100 } );
 	hatMaterial.color.r = 24/255;
 	hatMaterial.color.g = 38/255;
 	hatMaterial.color.b = 77/255;
 	hatMaterial.specular.setRGB( 0.5, 0.5, 0.5 );
 	hatMaterial.ambient.copy( hatMaterial.color );
 
-	var eyeMaterial = new THREE.MeshPhongMaterial( { color: 0x000000, specular: 0x303030, shininess: 4 } );
+	let eyeMaterial = new THREE.MeshPhongMaterial( { color: 0x000000, specular: 0x303030, shininess: 4 } );
 	eyeMaterial.ambient.copy( eyeMaterial.color );
 
 	// head
@@ -222,12 +223,12 @@ function createHead(bhead) {
 	bhead.add( cylinder );
 
 	// eyes
-	var sphGeom = new THREE.SphereGeometry( 10, 32, 16 );
+	let sphGeom = new THREE.SphereGeometry( 10, 32, 16 );
 
 	// left eye
 	sphere = new THREE.Mesh( sphGeom, eyeMaterial );
 	sphere.position.set( -48, 560, 0 );
-	var eye = new THREE.Object3D();
+	let eye = new THREE.Object3D();
 	eye.add( sphere );
 	eye.rotation.y = 20 * Math.PI / 180.0;
 	bhead.add( eye );
@@ -242,9 +243,9 @@ function createHead(bhead) {
 }
 
 function createDrinkingBird(bbird) {
-	var support = new THREE.Object3D();
-	var body = new THREE.Object3D();
-	var head = new THREE.Object3D();
+	let support = new THREE.Object3D();
+	let body = new THREE.Object3D();
+	let head = new THREE.Object3D();
 
 	// MODELS
 	// base + legs + feet
@@ -258,7 +259,7 @@ function createDrinkingBird(bbird) {
 
 	// make moving piece
 
-	var bodyhead = new THREE.Object3D();
+	let bodyhead = new THREE.Object3D();
 	bodyhead.add(body);
 	bodyhead.add(head);
 
@@ -267,12 +268,14 @@ function createDrinkingBird(bbird) {
 }
 
 function init() {
-	var canvasWidth = 846;
-	var canvasHeight = 494;
-	// For grading the window is fixed in size; here's general code:
-	//var canvasWidth = window.innerWidth;
-	//var canvasHeight = window.innerHeight;
-	var canvasRatio = canvasWidth / canvasHeight;
+	document.body.style.margin = "0";
+	document.body.style.padding = "0";
+	document.body.style.overflow = "hidden";
+
+	let canvasWidth = document.documentElement.clientWidth;
+	let canvasHeight = document.documentElement.clientHeight;
+
+	let canvasRatio = canvasWidth / canvasHeight;
 
 	// RENDERER
 	renderer = new THREE.WebGLRenderer( { antialias: true } );
@@ -281,7 +284,7 @@ function init() {
 	renderer.setSize(canvasWidth, canvasHeight);
 	renderer.setClearColorHex( 0xAAAAAA, 1.0 );
 
-	var container = document.getElementById('container');
+	let container = document.getElementById('container');
 	container.appendChild( renderer.domElement );
 
 	// CAMERA
@@ -295,8 +298,8 @@ function init() {
 }
 
 function addToDOM() {
-	var container = document.getElementById('container');
-	var canvas = container.getElementsByTagName('canvas');
+	let container = document.getElementById('container');
+	let canvas = container.getElementsByTagName('canvas');
 	if (canvas.length>0) {
 		container.removeChild(canvas[0]);
 	}
@@ -309,7 +312,7 @@ function animate() {
 }
 
 function render() {
-	var delta = clock.getDelta();
+	let delta = clock.getDelta();
 	cameraControls.update(delta);
 
 	renderer.render(scene, camera);
@@ -321,6 +324,6 @@ try {
 	addToDOM();
 	animate();
 } catch(e) {
-	var errorReport = "Your program encountered an unrecoverable error, can not draw on canvas. Error was:<br/><br/>";
+	let errorReport = "Your program encountered an unrecoverable error, can not draw on canvas. Error was:<br/><br/>";
 	$('#container').append(errorReport+e);
 }
