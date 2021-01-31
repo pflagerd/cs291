@@ -4,12 +4,12 @@
 ////////////////////////////////////////////////////////////////////////////////
 /*global THREE, requestAnimationFrame, $ */
 
-var txrpath = "";	// STUDENT: set to "" to run on your computer, "/" for submitting code to Udacity
+let txrpath = "";	// STUDENT: set to "" to run on your computer, "/" for submitting code to Udacity
 
-var camera, scene, renderer;
-var cameraControls;
-var clock = new THREE.Clock();
-var teapotSize = 400;
+let camera, scene, renderer;
+let cameraControls;
+let clock = new THREE.Clock();
+let teapotSize = 400;
 
 function fillScene() {
 	scene = new THREE.Scene();
@@ -17,7 +17,7 @@ function fillScene() {
 	// LIGHTS
 	scene.add( new THREE.AmbientLight( 0x333333 ) );
 
-	var light = new THREE.DirectionalLight( 0xFFFFFF, 0.9 );
+	let light = new THREE.DirectionalLight( 0xFFFFFF, 0.9 );
 	light.position.set( -1300, 700, 1240 );
 
 	scene.add( light );
@@ -28,18 +28,18 @@ function fillScene() {
 	scene.add( light );
 
 	// MATERIALS
-	var path = txrpath + "media/img/cs291/textures/skybox/";
-	var urls = [path + "px.jpg", path + "nx.jpg",
+	let path = txrpath + "media/img/cs291/textures/skybox/";
+	let urls = [path + "px.jpg", path + "nx.jpg",
 				path + "py.jpg", path + "ny.jpg",
 				path + "pz.jpg", path + "nz.jpg" ];
 
-	var textureCube = THREE.ImageUtils.loadTextureCube( urls );
+	let textureCube = THREE.ImageUtils.loadTextureCube( urls );
 	textureCube.format = THREE.RGBFormat;
 
-	var teapotMaterial = new THREE.MeshPhongMaterial(
+	let teapotMaterial = new THREE.MeshPhongMaterial(
 		{ color: 0x770000, specular:0xffaaaa } );
 
-	var teapot = new THREE.Mesh(
+	let teapot = new THREE.Mesh(
 		new THREE.TeapotGeometry( teapotSize,
 			8, true, true, true, true, true ),
 		teapotMaterial );
@@ -47,10 +47,10 @@ function fillScene() {
 	scene.add( teapot );
 
 
-	var shader = THREE.ShaderLib.cube;
+	let shader = THREE.ShaderLib.cube;
 	shader.uniforms.tCube.value = textureCube;
 
-	var skyMaterial = new THREE.ShaderMaterial( {
+	let skyMaterial = new THREE.ShaderMaterial( {
 		fragmentShader: shader.fragmentShader,
 		vertexShader: shader.vertexShader,
 		uniforms: shader.uniforms,
@@ -58,16 +58,17 @@ function fillScene() {
 		side: THREE.BackSide
 	} );
 
-	var sky = new THREE.Mesh( new THREE.CubeGeometry( 5000, 5000, 5000 ), skyMaterial );
+	let sky = new THREE.Mesh( new THREE.CubeGeometry( 5000, 5000, 5000 ), skyMaterial );
 	scene.add( sky );
 }
 
 function init() {
-	var canvasWidth = 846;
-	var canvasHeight = 494;
-	// For grading the window is fixed in size; here's general code:
-	//var canvasWidth = window.innerWidth;
-	//var canvasHeight = window.innerHeight;
+	document.body.style.margin = "0";
+	document.body.style.padding = "0";
+	document.body.style.overflow = "hidden";
+
+	let canvasWidth = document.documentElement.clientWidth;
+	let canvasHeight = document.documentElement.clientHeight;
 
 	// CAMERA
 	camera = new THREE.PerspectiveCamera( 45, canvasWidth/ canvasHeight, 100, 20000 );
@@ -90,8 +91,8 @@ function init() {
 // EVENT HANDLERS
 
 function addToDOM() {
-	var container = document.getElementById('container');
-	var canvas = container.getElementsByTagName('canvas');
+	let container = document.getElementById('container');
+	let canvas = container.getElementsByTagName('canvas');
 	if (canvas.length>0) {
 		container.removeChild(canvas[0]);
 	}
@@ -104,7 +105,7 @@ function animate() {
 }
 
 function render() {
-	var delta = clock.getDelta();
+	let delta = clock.getDelta();
 	cameraControls.update( delta );
 
 	renderer.render( scene, camera );
@@ -116,6 +117,6 @@ try {
 	addToDOM();
 	animate();
 } catch(e) {
-	var errorReport = "Your program encountered an unrecoverable error, can not draw on canvas. Error was:<br/><br/>";
+	let errorReport = "Your program encountered an unrecoverable error, can not draw on canvas. Error was:<br/><br/>";
 	$('#container').append(errorReport+e);
 }

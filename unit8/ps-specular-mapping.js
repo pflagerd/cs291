@@ -4,15 +4,15 @@
 ////////////////////////////////////////////////////////////////////////////////
 /*global THREE, requestAnimationFrame, $ */
 
-var camera, scene, renderer;
-var cameraControls;
-var clock = new THREE.Clock();
-var teapotSize = 400;
+let camera, scene, renderer;
+let cameraControls;
+let clock = new THREE.Clock();
+let teapotSize = 400;
 
 function createMaterial() {
 	// MATERIALS
 	// Student: use the texture '/media/img/cs291/textures/water.jpg'
-	var material = new THREE.MeshPhongMaterial( { shininess: 50 } );
+	let material = new THREE.MeshPhongMaterial( { shininess: 50 } );
 	material.color.setHSL( 0.09, 0.46, 0.2 );
 	material.ambient.copy( material.color );
 	material.specular.setHSL( 0.09, 0.46, 1.0 );
@@ -24,15 +24,15 @@ function fillScene() {
 	scene = new THREE.Scene();
 	// LIGHTS
 	scene.add( new THREE.AmbientLight( 0x333333 ) );
-	var light = new THREE.DirectionalLight( 0xFFFFFF, 0.9 );
+	let light = new THREE.DirectionalLight( 0xFFFFFF, 0.9 );
 	light.position.set( 200, 300, 500 );
 	scene.add( light );
 	light = new THREE.DirectionalLight( 0xFFFFFF, 0.7 );
 	light.position.set( -200, -100, -400 );
 	scene.add( light );
 
-	var material = createMaterial();
-	var teapot = new THREE.Mesh(
+	let material = createMaterial();
+	let teapot = new THREE.Mesh(
 		new THREE.TeapotGeometry( teapotSize,
 			8, true, true, true, true, true ),
 		material );
@@ -41,11 +41,12 @@ function fillScene() {
 }
 
 function init() {
-	var canvasWidth = 846;
-	var canvasHeight = 494;
-	// For grading the window is fixed in size; here's general code:
-	//var canvasWidth = window.innerWidth;
-	//var canvasHeight = window.innerHeight;
+	document.body.style.margin = "0";
+	document.body.style.padding = "0";
+	document.body.style.overflow = "hidden";
+
+	let canvasWidth = document.documentElement.clientWidth;
+	let canvasHeight = document.documentElement.clientHeight;
 
 	// CAMERA
 
@@ -67,8 +68,8 @@ function init() {
 }
 
 function addToDOM() {
-	var container = document.getElementById('container');
-	var canvas = container.getElementsByTagName('canvas');
+	let container = document.getElementById('container');
+	let canvas = container.getElementsByTagName('canvas');
 	if (canvas.length>0) {
 		container.removeChild(canvas[0]);
 	}
@@ -83,7 +84,7 @@ function animate() {
 }
 
 function render() {
-	var delta = clock.getDelta();
+	let delta = clock.getDelta();
 	cameraControls.update( delta );
 
 	renderer.render( scene, camera );
@@ -96,6 +97,6 @@ try {
 	addToDOM();
 	animate();
 } catch(e) {
-	var errorReport = "Your program encountered an unrecoverable error, can not draw on canvas. Error was:<br/><br/>";
+	let errorReport = "Your program encountered an unrecoverable error, can not draw on canvas. Error was:<br/><br/>";
 	$('#container').append(errorReport+e);
 }
